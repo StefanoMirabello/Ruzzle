@@ -16,6 +16,8 @@ import javafx.beans.property.StringProperty;
 public class Board {
 	private List<Pos> positions;
 	private Map<Pos, StringProperty> cells;
+//	La stringProperty ci permette tramite il binding di avere un collegamento diretto tra la 
+//	cella letta e il valore
 
 	private int size;
 
@@ -71,6 +73,9 @@ public class Board {
 			int random = (int)(Math.random()*26) ;
 			String letter = Character.toString((char)('A'+random)) ;
 			this.cells.get(p).set(letter); 
+//			Tramite il binding, quando cambia qui cambia anche nell'interfaccia senza passare dal controller
+			
+			
 		}
 	}
 	
